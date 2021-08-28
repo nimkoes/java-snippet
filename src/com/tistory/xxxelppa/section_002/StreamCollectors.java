@@ -3,7 +3,6 @@ package com.tistory.xxxelppa.section_002;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 import java.util.stream.Collectors;
 
 /*
@@ -64,6 +63,22 @@ public class StreamCollectors {
      */
 
     public static void main(String[] args) {
+        List<Student> totalList = Arrays.asList(
+            new Student("고구마", 17, Student.Gender.MALE),
+            new Student("복숭아", 21, Student.Gender.FEMALE),
+            new Student("스트림", 17, Student.Gender.MALE),
+            new Student("컬렉션", 21, Student.Gender.FEMALE)
+        );
+
+        // 남학생 리스트 생성
+        List<Student> maleList = totalList.stream().filter(s -> s.getGender() == Student.Gender.MALE).collect(Collectors.toList());
+        maleList.forEach(s-> System.out.println(s.getName()));
+
+        System.out.println();
+
+        // 여학생 HashSet 생성
+        HashSet<Student> femaleSet = totalList.stream().filter(s -> s.getGender() == Student.Gender.FEMALE).collect(Collectors.toCollection(HashSet::new));
+        femaleSet.forEach(s-> System.out.println(s.getName()));
 
     }
 }
