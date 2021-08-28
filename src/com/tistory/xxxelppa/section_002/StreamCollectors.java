@@ -132,6 +132,31 @@ public class StreamCollectors {
                 )
             );
 
+        // grouping 실습 2
+        Map<Student.Gender, Double> mapByGenderAvg = totalList.stream()
+            .collect(
+                Collectors.groupingBy(
+                    Student::getGender,
+                    Collectors.averagingDouble(Student::getScore)
+                )
+            );
 
+        mapByGenderAvg.forEach((k, v) -> {
+            System.out.println(k + " :: " + v);
+        });
+
+        System.out.println();
+
+        Map<Student.Gender, String> mapByName = totalList.stream()
+            .collect(
+                Collectors.groupingBy(
+                    Student::getGender,
+                    Collectors.mapping(Student::getName, Collectors.joining(","))
+                )
+            );
+
+        mapByName.forEach((k, v) -> {
+            System.out.println(k + " : " + v);
+        });
     }
 }
