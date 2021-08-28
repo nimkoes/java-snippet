@@ -1,8 +1,13 @@
 package com.tistory.xxxelppa.section_002;
 
+import com.sun.corba.se.spi.presentation.rmi.PresentationManager;
+import com.sun.xml.internal.ws.api.model.wsdl.WSDLOutput;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 /*
@@ -64,10 +69,10 @@ public class StreamCollectors {
 
     public static void main(String[] args) {
         List<Student> totalList = Arrays.asList(
-            new Student("고구마", 17, Student.Gender.MALE),
-            new Student("복숭아", 21, Student.Gender.FEMALE),
-            new Student("스트림", 17, Student.Gender.MALE),
-            new Student("컬렉션", 21, Student.Gender.FEMALE)
+            new Student("고구마", 17, Student.Gender.MALE, Student.City.ANYANG),
+            new Student("복숭아", 21, Student.Gender.FEMALE, Student.City.SEOUL),
+            new Student("스트림", 17, Student.Gender.MALE, Student.City.SEOUL),
+            new Student("컬렉션", 21, Student.Gender.FEMALE, Student.City.ANYANG)
         );
 
         // 남학생 리스트 생성
@@ -91,6 +96,42 @@ public class StreamCollectors {
             );
 
         maleStudent.getList().stream().forEach(s-> System.out.println(s.getName()));
+
+        System.out.println();
+
+        // grouping 실습
+        Map<Student.Gender, List<Student>> mapByGenderListMap = totalList.stream().collect(Collectors.groupingBy(Student::getGender));
+        mapByGenderListMap.forEach((k, v) -> {
+            System.out.println(k);
+            System.out.println("==========");
+            v.forEach(elem -> System.out.println(elem.getName() + " : " + elem.getCity() + " : " + elem.getScore()));
+            System.out.println();
+        });
+
+        Map<Student.City, List<String>> mapByCityListMap = totalList.stream()
+            .collect(
+                Collectors.groupingBy(
+                    Student::getCity,
+                    Collectors.mapping(Student::getName, Collectors.toList())
+                )
+            );
+
+        Map<Student.City, Set<String>> mapByCitySetMap_1 = totalList.stream()
+            .collect(
+                Collectors.groupingBy(
+                    Student::getCity,
+                    Collectors.mapping(Student::getName, Collectors.toCollection(HashSet::new))
+                )
+            );
+
+        Map<Student.City, Set<String>> mapByCitySetMap_2 = totalList.stream()
+            .collect(
+                Collectors.groupingBy(
+                    Student::getCity,
+                    Collectors.mapping(Student::getName, Collectors.toSet())
+                )
+            );
+
 
     }
 }
