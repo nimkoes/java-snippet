@@ -80,5 +80,17 @@ public class StreamCollectors {
         HashSet<Student> femaleSet = totalList.stream().filter(s -> s.getGender() == Student.Gender.FEMALE).collect(Collectors.toCollection(HashSet::new));
         femaleSet.forEach(s-> System.out.println(s.getName()));
 
+        System.out.println();
+
+        // 사용자 정의 컨테이너 collect 실습 (싱글 스레드)
+        MaleStudent maleStudent = totalList.stream().filter(s -> s.getGender() == Student.Gender.MALE)
+            .collect(
+                () -> new MaleStudent(),            // 사용자 정의 컨테이너를 만드는 supplier
+                (r, t) -> r.accumulate(t),          // r : 컨테이너로 첫번째 매개변수를 가리킨다. / t : filter 된 요소를 가리킨다.
+                (r1, r2) -> r1.combine(r2)          // 병렬 처리를 위해 추가 된 것 / r1 과 r2 는 MaleStudent 의 서로 다른 객체
+            );
+
+        maleStudent.getList().stream().forEach(s-> System.out.println(s.getName()));
+
     }
 }
