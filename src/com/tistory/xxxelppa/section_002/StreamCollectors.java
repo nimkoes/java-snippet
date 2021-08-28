@@ -53,29 +53,17 @@ public class StreamCollectors {
      * collect 메소드는 Collector<T, A, R> 인터페이스 타입을 매개변수로 받음.
      * Collector<T, A, R> 타입을 반환하는 메소드를 Collectors 클래스에 static method 로 미리 정의.
      * 특별한 경우가 아니라면 collect 메소드 사용시 Collectors 클래스의 method 를 사용.
+     *
+     * T : collect 대상
+     * A : accumulator -> 누산기, T 를 collection 에 수집
+     * R : T 가 수집 된 새로운 collection
+     *
+     * Collectors API 의 static method 중 accumulator 가 ? 로 되어있는 부분이 있는데
+     * 잘 알려진 각 collection (List, Map, Set) 에 대해 누산 할 방법을 이미 알고 있기 때문에
+     * accumulator 를 굳이 알려주지 않아도 되기 때문이다.
      */
 
     public static void main(String[] args) {
-        List<Student> totalList = Arrays.asList(
-                new Student("고구마", 10, Student.Gender.MALE),
-                new Student("감자", 6, Student.Gender.FEMALE),
-                new Student("김치찌개", 10, Student.Gender.MALE),
-                new Student("된장찌개", 6, Student.Gender.FEMALE)
-        );
-
-        List<Student> maleList = totalList.stream()
-                .filter(s -> s.getGender() == Student.Gender.MALE)
-                .collect(Collectors.toList());
-        maleList.stream()
-                .forEach(s -> System.out.println(s.getName()));
-
-        System.out.println();
-
-        Set<Student> femaleList = totalList.stream()
-                .filter(s -> s.getGender() == Student.Gender.FEMALE)
-                .collect(Collectors.toCollection(HashSet::new));
-        femaleList.stream()
-                .forEach(s -> System.out.println(s.getName()));
 
     }
 }
