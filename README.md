@@ -17,5 +17,5 @@
   
   
   
-[link_section_001]:https://github.com/nimkoes/java-snippet/blob/master/src/com/tistory/xxxelppa/section_001/Main.java
-[link_section_001]:https://github.com/nimkoes/java-snippet/blob/master/src/com/tistory/xxxelppa/section_002/StreamCollectors.java
+[link_section_001]:https://github.com/nimkoes/java-snippet/blob/master/src/me/nimkoes/section_001/Main.java
+[link_section_001]:https://github.com/nimkoes/java-snippet/blob/master/src/me/nimkoes/section_002/StreamCollectors.java

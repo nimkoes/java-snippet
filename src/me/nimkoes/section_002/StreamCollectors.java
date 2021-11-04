@@ -1,9 +1,6 @@
-package com.tistory.xxxelppa.section_002;
+package me.nimkoes.section_002;
 
-import com.sun.corba.se.spi.presentation.rmi.PresentationManager;
-import com.sun.xml.internal.ws.api.model.wsdl.WSDLOutput;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;

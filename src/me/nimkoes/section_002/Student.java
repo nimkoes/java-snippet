@@ -1,4 +1,4 @@
-package com.tistory.xxxelppa.section_002;
+package me.nimkoes.section_002;
 
 public class Student {
     public enum Gender {MALE, FEMALE}

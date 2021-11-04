@@ -1,4 +1,4 @@
-package com.tistory.xxxelppa.section_002;
+package me.nimkoes.section_002;
 
 import java.util.ArrayList;
 import java.util.List;

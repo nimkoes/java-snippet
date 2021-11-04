@@ -1,4 +1,4 @@
-package com.tistory.xxxelppa.section_001;
+package me.nimkoes.section_001;
 
 public class BoxingUnboxing {
     public static void main(String[] args) {
