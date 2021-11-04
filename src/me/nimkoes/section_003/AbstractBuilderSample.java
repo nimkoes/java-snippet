@@ -8,7 +8,7 @@ public abstract class AbstractBuilderSample {
     public enum SKILL {JAVA, SPRING, SPRING_BOOT, JPA, DATA_JPA}
 
     // 생성자에서 할당
-    final Set<SKILL> skils;
+    final Set<SKILL> skills;
 
     // Builder<T> 타입의 T
     abstract static class Builder<T extends Builder<T>> {
@@ -25,6 +25,6 @@ public abstract class AbstractBuilderSample {
     }
 
     AbstractBuilderSample(Builder<?> builder) {
-        skils = builder.skills.clone();
+        skills = builder.skills.clone();
     }
 }
