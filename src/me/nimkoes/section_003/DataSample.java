@@ -1,6 +1,6 @@
 package me.nimkoes.section_003;
 
-public class SampleData {
+public class DataSample {
     private String name;
     private Integer age;
     private String gender;
@@ -39,13 +39,13 @@ public class SampleData {
         }
 
         // outer class 인 SampleData 클래스 객체를 반환하는 builder 메소드
-        public SampleData build() {
-            return new SampleData(this);
+        public DataSample build() {
+            return new DataSample(this);
         }
     }
 
     // inner static class 를 전달 받는 private constructor 정의
-    private SampleData(Builder builder) {
+    private DataSample(Builder builder) {
         this.name = builder.name;
         this.age = builder.age;
 
