@@ -1,11 +1,13 @@
 package me.nimkoes.section_004;
 
+import me.nimkoes.common.template.DurationTemplate;
+
 import static me.nimkoes.section_004.Util.*;
 
-public class UsingSwitch extends SampleTemplate {
+public class UsingSwitch extends DurationTemplate {
 
     @Override
-    void coreLogic() {
+    public void coreLogic() {
         switch (getRandomElem()) {
             case ELEM_0: tickOver(); break;
             case ELEM_1: tickOver(); break;

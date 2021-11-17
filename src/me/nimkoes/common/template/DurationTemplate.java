@@ -1,6 +1,6 @@
-package me.nimkoes.section_004;
+package me.nimkoes.common.template;
 
-public abstract class SampleTemplate {
+public abstract class DurationTemplate {
 
     public long execute(int loopCount) {
         long startTime = System.nanoTime();
@@ -12,5 +12,6 @@ public abstract class SampleTemplate {
         long resultTime = endTime - startTime;
         return resultTime;
     }
-    abstract void coreLogic();
+
+    public abstract void coreLogic();
 }

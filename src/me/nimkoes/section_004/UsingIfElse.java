@@ -1,11 +1,13 @@
 package me.nimkoes.section_004;
 
+import me.nimkoes.common.template.DurationTemplate;
+
 import static me.nimkoes.section_004.Util.*;
 
-public class UsingIfElse extends SampleTemplate {
+public class UsingIfElse extends DurationTemplate {
 
     @Override
-    void coreLogic() {
+    public void coreLogic() {
         Elem elem = getRandomElem();
 
         if (Elem.ELEM_0.equals(elem)) tickOver();

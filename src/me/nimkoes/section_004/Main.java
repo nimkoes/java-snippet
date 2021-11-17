@@ -1,18 +1,20 @@
 package me.nimkoes.section_004;
 
+import me.nimkoes.common.template.DurationTemplate;
+
 public class Main {
 
     private static final int LOOP_COUNT = 100;
-    private static SampleTemplate[] mySampleTemplate = {new UsingIf(), new UsingIfElse(), new UsingSwitch()};
+    private static DurationTemplate[] myDurationTemplate = {new UsingIf(), new UsingIfElse(), new UsingSwitch()};
 
     public static void main(String[] args) {
-        for (SampleTemplate sampleTemplate : mySampleTemplate) {
-            doPorcess(sampleTemplate);
+        for (DurationTemplate durationTemplate : myDurationTemplate) {
+            doPorcess(durationTemplate);
         }
     }
 
-    private static void doPorcess(SampleTemplate sampleTemplate) {
-        System.out.println(sampleTemplate.getClass() + " >> " + sampleTemplate.execute(LOOP_COUNT) + "ms");
+    private static void doPorcess(DurationTemplate durationTemplate) {
+        System.out.println(durationTemplate.getClass() + " >> " + durationTemplate.execute(LOOP_COUNT) + "ms");
     }
 
 }
