@@ -9,11 +9,11 @@ public class Main {
 
     public static void main(String[] args) {
         for (DurationTemplate durationTemplate : myDurationTemplate) {
-            doPorcess(durationTemplate);
+            doProcess(durationTemplate);
         }
     }
 
-    private static void doPorcess(DurationTemplate durationTemplate) {
+    private static void doProcess(DurationTemplate durationTemplate) {
         System.out.println(durationTemplate.getClass() + " >> " + durationTemplate.execute(LOOP_COUNT) + "ms");
     }
 
