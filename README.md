@@ -10,7 +10,7 @@
   - [section_003 : Builder Pattern 실습][link_section_003]
   - [section_004 : if, if else, switch 속도 비교 테스트][link_section_004]
   - [section_005 : 불필요한 객체 생성 속도 비교 테스트 (정규표현식)][link_section_005]
-  - [section_006 : System.out.println vs. logback][link_section_005]
+  - [section_006 : System.out.println vs. logback][link_section_006]
     - <sub>동일한 내용을 출력한다고 가정하고 테스트<sub>local test 결과 최소 2배 ~ 최대 10배 정도 출력 시간 차이 발생</sub></sub>
 
 　  
