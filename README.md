@@ -7,7 +7,7 @@
   
   - [section_001 : Auto Boxing 성능 테스트][link_section_001]
   - [section_002 : Stream Collectors 실습][link_section_002]
-  - [section_003 : Builder Pattern 실습][link_section_003]
+  - [section_003 : Builder Pattern 구현 실습][link_section_003]
   - [section_004 : if, if else, switch 속도 비교 테스트][link_section_004]
   - [section_005 : 불필요한 객체 생성 속도 비교 테스트 (정규표현식)][link_section_005]
   - [section_006 : System.out.println vs. logback][link_section_006]
